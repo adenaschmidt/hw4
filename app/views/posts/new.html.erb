@@ -16,13 +16,18 @@
       <%= form.label "posted_on" %>
       <%= form.date_field "posted_on" %>
     </p>
+    
+    <div class="mb-3">
+      <%= form.label "image", :class => "form-label" %>
+      <%= form.text_field "image", :class => "form-control" %>
+    </div>
     <p>
-      <%= form.label "image" %>
-      <%= form.file_field "uploaded_image", :accept => "image/png,image/jpg,image/jpeg,image/gif", :class => "form-control" %>
+      <%= form.submit "Create Post", :class => "btn btn-primary" %>
     </p>
     <p>
-      <%= form.submit %>
+      <button type="button" class="btn btn-light"><a href="/places">Back to All Places</a></button>
     </p>
+
   <% end %>
 
 <% else %>
