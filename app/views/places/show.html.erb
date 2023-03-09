@@ -1,7 +1,7 @@
 
 <h1><%= @place["name"] %></h1>
 
-<h2>My Posts</h2>
+
 <div class="container">
   <div class="row">
   <% if @current_user%>
@@ -11,19 +11,23 @@
     <h4><%= post["posted_on"] %></h4>
     <p><%= post["description"] %></p>
     
-  <% if post.uploaded_image.attached? %>
-        <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
+  
       <% else %>
       You must <a href="/login">login</a> first to post.
       <img src="<%= post["image"] %>" class="img-fluid">
       <% end %>
 
   </div>
+  
 <% end %>
 </div>
 
-<p>
- <button type="button" class="btn btn-success"><a href="/posts/new?place_id=<%= @place["id"] %>"class="link-light">New Post</a></button></p>
+<div class="row">
+      <h2>My Posts</h2>
+      <div class="col-sm-3 text-end">
+        <a href="/posts/new/" class="btn btn-success">New Post</a>
+      </div>
+    </div>
 
 <p>
   <button type="button" class="btn btn-light"><a href="/places">Back to All Places</a></button>
