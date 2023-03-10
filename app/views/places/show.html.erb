@@ -1,6 +1,8 @@
 
 <h1><%= @place["name"] %></h1>
 
+
+
 <div class="container">
   <div class="row">
   <% if @current_user%>
@@ -24,7 +26,7 @@
 <div class="row">
       <h2>My Posts</h2>
       <div class="col-sm-20 text-end">
-        <a href="/posts/new/" class="btn btn-success">New Post</a>
+        <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-success">New Post</a>
         <p>
       <button type="button" class="btn btn-light"><a href="/places">Back to All Places</a></button>
       </p>
