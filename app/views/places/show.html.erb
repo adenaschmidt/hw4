@@ -1,6 +1,5 @@
 
-<h1><%= @place["name"] %></h1>
-
+<h1>My posts in <%= @place["name"] %></h1>
 
 
 <div class="container">
@@ -17,14 +16,13 @@
         <img src="<%= post["image"] %>" class="img-fluid">
       <% end %>
   
-  You must <a href="/login">login</a> first to post.
+  
       <img src="<%= post["image"] %>" class="img-fluid">
   </div>
 <% end %>
 </div>
 
 <div class="row">
-      <h2>My Posts</h2>
       <div class="col-sm-20 text-end">
         <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-success">New Post</a>
         <p>

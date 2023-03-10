@@ -15,14 +15,10 @@ class PlacesController < ApplicationController
 
   def create
     @user = User.find_by({"email" => params["email"]})
-    if @current_user
     @place = Place.new
     @place["name"] = params["place"]["name"]
     @place.save
-    else
-      flash["notice"] = "You must login first."
-      
-    end
+    
     redirect_to "/places"
   end
 
