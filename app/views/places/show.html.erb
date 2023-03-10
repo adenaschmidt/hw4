@@ -10,12 +10,15 @@
     <h3><%= post["title"] %></h3>
     <h4><%= post["posted_on"] %></h4>
     <p><%= post["description"] %></p>
-    
-  
+    <% if post.uploaded_image.attached? %>
+        <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
       <% else %>
-      You must <a href="/login">login</a> first to post.
-      <img src="<%= post["image"] %>" class="img-fluid">
+        <img src="<%= post["image"] %>" class="img-fluid">
       <% end %>
+  
+  You must <a href="/login">login</a> first to post.
+      <img src="<%= post["image"] %>" class="img-fluid">
+      
 
   </div>
   
